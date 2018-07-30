@@ -15,6 +15,14 @@
 				var point = maxPoint * randomPoint;
 				new Path.Circle(new Point(point), 20).fillColor = 'yellow';
 			}
+
+			var animatedCircle = new Path.Circle(new Point(300, 300), 200);
+			animatedCircle.fillColor = 'blue';
+
+			function onFrame(event){
+				animatedCircle.fillColor.hue += 1;
+				animatedCircle.scale(.9);
+			}
 			
 		</script>
 		
