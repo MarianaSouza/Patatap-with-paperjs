@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Patatap</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<script type="text/javascript" src="lib/paper-full.js"></script>
+		<script type="text/paperscript" canvas="myCanvas">
+			// When you click, set the content of the new path item:
+			function onMouseDown(event){
+				//maxPoint determines the max sizes (x,y) where the circles will appear
+				//no matter the size of the screen
+				var maxPoint = new Point(view.size.width, view.size.height);
+				var randomPoint = Point.random();
+				var point = maxPoint * randomPoint;
+				new Path.Circle(new Point(point), 20).fillColor = 'yellow';
+			}
+			
+		</script>
+		
+	</head>
+	<body>
+		<canvas id="myCanvas" resize></canvas>
+	</body>
+</html>
