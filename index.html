@@ -5,15 +5,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 		<script type="text/javascript" src="lib/paper-full.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.14/howler.js"></script>
 		<script type="text/paperscript" canvas="myCanvas">
+			var sound = new Howl({
+				src: ['sounds/bubbles.mp3']
+			});
 
 			var circles = [];
 
-			// When you click, set the content of the new path item:
-			function onMouseDown(event){
+			// When you hit a key, set the content of the new path item:
+
+			function onKeyDown(event){
 				//maxPoint determines the max sizes (x,y) where the circles will appear
 				//no matter the size of the screen
-
+				sound.play();
 				var maxPoint = new Point(view.size.width, view.size.height);
 				var randomPoint = Point.random();
 				var point = maxPoint * randomPoint;
@@ -26,8 +31,7 @@
 				for(var i = 0; i < circles.length; i++){
 					circles[i].fillColor.hue += 1;
 					circles[i].scale(.9);
-				}
-				
+				}	
 			}
 			
 		</script>
