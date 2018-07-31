@@ -4,6 +4,7 @@
 		<title>Patatap App</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 		<script type="text/javascript" src="lib/paper-full.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.14/howler.js"></script>
 		<script type="text/paperscript" canvas="myCanvas">
@@ -171,7 +172,7 @@
 			//Array that keeps track of the new circles
 			var circles = [];
 
-			// When the user hits a key that is part of the object keyData, it set the content of the new path item:
+			// When the user hits a key that is part of the object keyData, it sets the content of the new path item:
 			function onKeyDown(event){
 			    if(keyData[event.key]){
 				    //maxPoint determines the max sizes (x,y) where the circles will appear no matter the size or the screen
@@ -183,7 +184,7 @@
 					keyData[event.key].sound.play();
 					circles.push(newCircle);
 				}else{
-					//if the key is not part of the object keyData, a gray circle will be built.
+					//if the key is not part of the object keyData, a gray circle with no sound will be built.
 					var maxPoint = new Point(view.size.width, view.size.height);
 					var randomPoint = Point.random();
 					var point = maxPoint * randomPoint;
