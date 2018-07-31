@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Patatap</title>
+		<title>Patatap App</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 		<script type="text/javascript" src="lib/paper-full.js"></script>
@@ -171,8 +171,7 @@
 			//Array that keeps track of the new circles
 			var circles = [];
 
-			// When the user hits a key that is part of the object keyData, set the content of the new path item:
-
+			// When the user hits a key that is part of the object keyData, it set the content of the new path item:
 			function onKeyDown(event){
 			    if(keyData[event.key]){
 				    //maxPoint determines the max sizes (x,y) where the circles will appear no matter the size or the screen
@@ -184,6 +183,7 @@
 					keyData[event.key].sound.play();
 					circles.push(newCircle);
 				}else{
+					//if the key is not part of the object keyData, a gray circle will be built.
 					var maxPoint = new Point(view.size.width, view.size.height);
 					var randomPoint = Point.random();
 					var point = maxPoint * randomPoint;
@@ -192,7 +192,8 @@
 					circles.push(newCircle);
 				}
 			}
-
+            
+            //This function
 			function onFrame(event){
 				for(var i = 0; i < circles.length; i++){
 					circles[i].fillColor.hue += 1;
